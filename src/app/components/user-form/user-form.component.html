@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <mat-card class="form">
+    <mat-card-header>
+      <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" required />
+        <mat-error *ngIf="userForm.get('nombre')?.hasError('required')">El nombre es requerido.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correo" required email />
+        <mat-error *ngIf="userForm.get('correo')?.hasError('required')">El correo es requerido.</mat-error>
+        <mat-error *ngIf="userForm.get('correo')?.hasError('email')">El correo no es válido.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Edad</mat-label>
+        <input matInput type="number" formControlName="edad" required />
+        <mat-error *ngIf="userForm.get('edad')?.hasError('required')">La edad es requerida.</mat-error>
+        <mat-error *ngIf="userForm.get('edad')?.hasError('min')">La edad debe ser mayor o igual a 0.</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" type="submit">Guardar</button>
+      <button mat-raised-button (click)="cancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+

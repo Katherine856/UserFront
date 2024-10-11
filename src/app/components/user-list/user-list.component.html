@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Lista de Usuarios</h1>
+  <button mat-raised-button color="primary" (click)="addUser()">Agregar Nuevo Usuario</button>
+  <app-user-card (userDeleted)="onUserDeleted()" *ngFor="let user of users" [user]="user"></app-user-card>
+  <h6 *ngIf="message !== ''">{{ message }}</h6>
+</div>

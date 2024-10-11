@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centra horizontalmente
+  padding: 20px; // Espacio interno para no estar pegado al borde
+  max-width: 400px; // Ancho máximo para el formulario
+  margin: 0 auto; // Centra el formulario en la página
+
+  mat-card {
+    width: 100%; // Asegura que el card ocupe todo el ancho disponible
+  }
+
+  mat-form-field {
+    width: 100%; // Asegura que los campos ocupen todo el ancho
+    margin-bottom: 16px; // Espacio entre los campos
+  }
+
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between; // Distribuye los botones
+    width: 100%; // Asegura que los botones ocupen todo el ancho
+  }
+}
+
